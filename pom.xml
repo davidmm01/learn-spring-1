@@ -12,5 +12,51 @@
     </modules>
     <packaging>pom</packaging>
 
+    <properties>
+        <!--define once here, then use in dependency tags by ${foo.version}-->
+        <logback.version>1.2.3</logback.version>
+        <!--latest is actually 5.1.7.RELEASE but im getting compilation problems with it...-->
+        <spring.version>5.1.6.RELEASE</spring.version>
+        <java.version>11</java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+
+            <!-- https://mvnrepository.com/artifact/ch.qos.logback/logback-classic -->
+            <!-- see Section 4: Using logging with logback -->
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+                <!--You can put <scope>test</scope> here to add a testing only dependency -->
+            </dependency>
+
+            <!--Spring context-->
+            <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <!--copied from hello-maven, done in Section 3: Fix our Maven Project-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.7.0</version>
+                <configuration>
+                    <target>${java.version}</target>
+                    <source>${java.version}</source>
+                    <release>${java.version}</release>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
