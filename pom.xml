@@ -18,6 +18,7 @@
         <!--latest is actually 5.1.7.RELEASE but im getting compilation problems with it...-->
         <spring.version>5.1.6.RELEASE</spring.version>
         <java.version>11</java.version>
+        <annotation-api.version>1.3.2</annotation-api.version>
     </properties>
 
     <dependencyManagement>
@@ -38,6 +39,16 @@
                 <groupId>org.springframework</groupId>
                 <artifactId>spring-context</artifactId>
                 <version>${spring.version}</version>
+            </dependency>
+
+            <!-- Annotation API-->
+            <!-- this gives us the annotations to allow functions to be called on init and destroy etc... -->
+            <!-- see video 29 for pros vs cons of XML or annotation configuration -->
+            <!-- https://mvnrepository.com/artifact/javax.annotation/javax.annotation-api -->
+            <dependency>
+                <groupId>javax.annotation</groupId>
+                <artifactId>javax.annotation-api</artifactId>
+                <version>${annotation-api.version}</version>
             </dependency>
 
         </dependencies>
