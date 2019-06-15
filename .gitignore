@@ -1,0 +1,5 @@
+.idea
+.idea/*
+console/target/*
+core/target/*
+*.jar
