@@ -18,6 +18,9 @@ public class Main {
         // get number generator bean from context (container)
         NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
 
+        // get the message generator bean from context (container)
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
+
         // call method next() to get a random number
         int number = numberGenerator.next();
 
@@ -26,6 +29,10 @@ public class Main {
 
         // get game bean from context (container)
         Game game = context.getBean(Game.class);
+
+        // call the methods of the message generator
+        messageGenerator.getMainMessage();
+        messageGenerator.getResultMessage();
 
         // close context (container)
         context.close();
