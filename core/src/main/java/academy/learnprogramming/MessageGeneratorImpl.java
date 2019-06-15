@@ -9,7 +9,7 @@ import javax.annotation.PostConstruct;
 public class MessageGeneratorImpl implements MessageGenerator {
 
     // constants
-    private static final Logger log = LoggerFactory.getLogger(GameImpl.class);
+    private static final Logger log = LoggerFactory.getLogger(MessageGeneratorImpl.class);
 
     // fields
     @Autowired

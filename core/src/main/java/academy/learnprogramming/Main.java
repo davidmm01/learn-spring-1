@@ -18,21 +18,17 @@ public class Main {
         // get number generator bean from context (container)
         NumberGenerator numberGenerator = context.getBean(NumberGenerator.class);
 
-        // get the message generator bean from context (container)
-        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
-
         // call method next() to get a random number
         int number = numberGenerator.next();
 
         // log generated number
         log.info("number = {}", number);
 
-        // get game bean from context (container)
-        Game game = context.getBean(Game.class);
+        // get the message generator bean from context (container)
+        MessageGenerator messageGenerator = context.getBean(MessageGenerator.class);
 
-        // call the methods of the message generator
-        messageGenerator.getMainMessage();
-        messageGenerator.getResultMessage();
+        log.info("getMainMessage = {}", messageGenerator.getMainMessage());
+        log.info("getMainMessage = {}", messageGenerator.getResultMessage());
 
         // close context (container)
         context.close();
