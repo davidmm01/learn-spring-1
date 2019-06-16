@@ -14,11 +14,6 @@ public class AppConfig {
     // bean methods
     // useful when we need additional configuration for a bean
     @Bean
-    public NumberGenerator numberGenerator() {
-        return new NumberGeneratorImpl();
-    }
-
-    @Bean
     public Game game() {
         return new GameImpl();
     }
