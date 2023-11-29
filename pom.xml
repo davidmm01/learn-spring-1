@@ -15,7 +15,7 @@
 
     <properties>
         <!--define once here, then use in dependency tags by ${foo.version}-->
-        <logback.version>1.2.3</logback.version>
+        <logback.version>1.3.12</logback.version>
         <!--latest is actually 5.1.7.RELEASE but im getting compilation problems with it...-->
         <spring.version>5.1.6.RELEASE</spring.version>
         <java.version>11</java.version>
